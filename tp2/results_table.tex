@@ -1,0 +1,9 @@
+\begin{tabular}{lrrrl}
+\toprule
+Method & Peak RAM (MB) & Avg RAM (MB) & Time (s) & Outcome \\
+\midrule
+Standard Pandas & 3710 & 1892 & 22.7 & OOM / crash \\
+Pandas Chunking & 148 & 138 & 233.4 & Success \\
+Dask DataFrame & 1355 & 1143 & 208.3 & Success \\
+\bottomrule
+\end{tabular}

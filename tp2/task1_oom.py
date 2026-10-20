@@ -5,9 +5,10 @@ import psutil
 LIMIT = 4 * 1024**3
 resource.setrlimit(resource.RLIMIT_AS, (LIMIT, LIMIT))
 
-path = "tp2/dataset/itineraries.csv"
+path = "dataset/itineraries.csv"
 
 print("RAM before:", psutil.virtual_memory().percent, "%")
+
 
 try:
     df = pd.read_csv(path, engine="python")
