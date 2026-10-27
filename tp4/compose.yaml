@@ -1,0 +1,16 @@
+services:
+  dataset-node:
+    image: dataset-image:latest
+    build: .
+    networks:
+      - dataset-net
+    volumes:
+      - ./dataset:/app/dataset:ro
+    command: tail -f /dev/null
+    deploy:
+      replicas: 3
+    restart: unless-stopped
+
+networks:
+  dataset-net:
+    driver: bridge
